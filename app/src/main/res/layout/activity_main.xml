@@ -8,29 +8,29 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="372dp"
-        android:layout_height="151dp"
+        android:id="@+id/caja"
+        android:layout_width="366dp"
+        android:layout_height="103dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="24dp"
-        android:text="hola"
-        android:textAlignment="textEnd"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="35dp"
+        android:text="0"
+        android:textAlignment="viewEnd"
         android:textColor="#ff9800"
-        android:textSize="37dp" />
+        android:textColorHighlight="#FFC107"
+        android:textSize="27sp"
+        app:drawableTint="#FFC107" />
 
     <GridLayout
-        android:id="@+id/gridlayout"
-        android:layout_width="374dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="305dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
-        android:layout_marginBottom="29dp"
+        android:layout_marginStart="-5dp"
+        android:layout_marginBottom="1dp"
+        android:background="#000B3053"
         android:columnCount="4"
-        android:orientation="horizontal"
-        android:padding="3dp"
         android:rowCount="5">
 
         <Button
@@ -39,40 +39,32 @@
             android:layout_column="0"
             android:layout_margin="2dp"
             android:background="#212121"
+            android:onClick="btnclean"
             android:text="C"
             android:textColor="#ff9800"
-            android:textSize="22dp" />
+            android:textSize="22sp" />
 
         <Button
-            android:id="@+id/potencia"
+            android:id="@+id/raiz"
             android:layout_row="0"
             android:layout_column="1"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:text="x^"
-            android:textAllCaps="false"
+            android:onClick="btnraiz"
+            android:text="√"
             android:textColor="#ff9800"
-            android:textSize="22dp" />
+            android:textSize="22sp" />
 
         <Button
-            android:id="@+id/dividir"
+            android:id="@+id/potencia"
             android:layout_row="0"
             android:layout_column="2"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:text="/"
+            android:onClick="btnpoten"
+            android:text="x^"
             android:textColor="#ff9800"
-            android:textSize="22dp" />
-
-        <Button
-            android:id="@+id/multiplicar"
-            android:layout_row="1"
-            android:layout_column="3"
-            android:layout_margin="2dp"
-            android:background="#212121"
-            android:text="*"
-            android:textColor="#ff9800"
-            android:textSize="22dp" />
+            android:textSize="22sp" />
 
         <Button
             android:id="@+id/borrar"
@@ -80,10 +72,56 @@
             android:layout_column="3"
             android:layout_margin="2dp"
             android:background="#212121"
+            android:onClick="btnbrr"
             android:text="Borrar"
             android:textAllCaps="false"
             android:textColor="#ff9800"
-            android:textSize="22dp" />
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/dividir"
+            android:layout_row="1"
+            android:layout_column="3"
+            android:layout_margin="2dp"
+            android:background="#212121"
+            android:onClick="btndivi"
+            android:text="/"
+            android:textColor="#ff9800"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/multiplicar"
+            android:layout_row="2"
+            android:layout_column="3"
+            android:layout_margin="2dp"
+            android:background="#212121"
+            android:onClick="btnmulti"
+            android:text="*"
+            android:textColor="#ff9800"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/suma"
+            android:layout_row="4"
+            android:layout_column="3"
+            android:layout_margin="2dp"
+            android:background="#212121"
+            android:onClick="btnsuma"
+            android:text="+"
+            android:textColor="#ff9800"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/resta"
+            android:layout_row="3"
+            android:layout_column="3"
+            android:layout_margin="2dp"
+            android:background="#212121"
+            android:onClick="btnresta"
+            android:text="-"
+            android:textColor="#ff9800"
+            android:textSize="22sp" />
+
 
         <Button
             android:id="@+id/siete"
@@ -91,9 +129,10 @@
             android:layout_column="0"
             android:layout_margin="2dp"
             android:background="#212121"
+            android:onClick="btn7"
             android:text="7"
-            android:textColor="#607d8d"
-            android:textSize="22dp" />
+            android:textColor="#FFFFFF"
+            android:textSize="22sp" />
 
         <Button
             android:id="@+id/ocho"
@@ -101,9 +140,10 @@
             android:layout_column="1"
             android:layout_margin="2dp"
             android:background="#212121"
+            android:onClick="btn8"
             android:text="8"
-            android:textColor="#607d8d"
-            android:textSize="22dp" />
+            android:textColor="#F7F5F5"
+            android:textSize="22sp" />
 
         <Button
             android:id="@+id/nueve"
@@ -111,31 +151,22 @@
             android:layout_column="2"
             android:layout_margin="2dp"
             android:background="#212121"
+            android:onClick="btn9"
             android:text="9"
-            android:textColor="#607d8d"
-            android:textSize="22dp" />
+            android:textColor="#FDFDFD"
+            android:textSize="22sp" />
 
-        <Button
-            android:id="@+id/resta"
-            android:layout_width="91dp"
-            android:layout_height="51dp"
-            android:layout_row="2"
-            android:layout_column="3"
-            android:layout_margin="2dp"
-            android:background="#212121"
-            android:text="-"
-            android:textColor="#ff9800"
-            android:textSize="22dp" />
 
         <Button
             android:id="@+id/cuatro"
             android:layout_row="2"
             android:layout_column="0"
-            android:layout_margin="2dp"
+            android:layout_margin="3dp"
             android:background="#212121"
+            android:onClick="btn4"
             android:text="4"
-            android:textColor="#607d8d"
-            android:textSize="22dp" />
+            android:textColor="#F6F9FA"
+            android:textSize="22sp" />
 
         <Button
             android:id="@+id/cinco"
@@ -143,9 +174,11 @@
             android:layout_column="1"
             android:layout_margin="2dp"
             android:background="#212121"
+            android:onClick="btn5"
             android:text="5"
-            android:textColor="#607d8d"
-            android:textSize="22dp" />
+            android:textAllCaps="false"
+            android:textColor="#FDFDFD"
+            android:textSize="22sp" />
 
         <Button
             android:id="@+id/seis"
@@ -153,21 +186,13 @@
             android:layout_column="2"
             android:layout_margin="2dp"
             android:background="#212121"
+            android:onClick="btn6"
             android:text="6"
-            android:textColor="#607d8d"
-            android:textSize="22dp" />
+            android:textColor="#F7F9FA"
+            android:textSize="22sp"
+            app:layout_column="2"
+            app:layout_row="2" />
 
-        <Button
-            android:id="@+id/suma"
-            android:layout_width="91dp"
-            android:layout_height="51dp"
-            android:layout_row="3"
-            android:layout_column="3"
-            android:layout_margin="2dp"
-            android:background="#212121"
-            android:text="+"
-            android:textColor="#ff9800"
-            android:textSize="22dp" />
 
         <Button
             android:id="@+id/uno"
@@ -175,9 +200,10 @@
             android:layout_column="0"
             android:layout_margin="2dp"
             android:background="#212121"
+            android:onClick="btn1"
             android:text="1"
-            android:textColor="#607d8d"
-            android:textSize="22dp" />
+            android:textColor="#EDF2F3"
+            android:textSize="22sp" />
 
         <Button
             android:id="@+id/dos"
@@ -185,9 +211,11 @@
             android:layout_column="1"
             android:layout_margin="2dp"
             android:background="#212121"
+            android:onClick="btn2"
             android:text="2"
-            android:textColor="#607d8d"
-            android:textSize="22dp" />
+            android:textAllCaps="false"
+            android:textColor="#E8EDF0"
+            android:textSize="22sp" />
 
         <Button
             android:id="@+id/tres"
@@ -195,9 +223,12 @@
             android:layout_column="2"
             android:layout_margin="2dp"
             android:background="#212121"
+            android:onClick="btn3"
             android:text="3"
-            android:textColor="#607d8d"
-            android:textSize="22dp" />
+            android:textColor="#ECF0F1"
+            android:textSize="22sp"
+            app:layout_column="0"
+            app:layout_row="1" />
 
         <Button
             android:id="@+id/cero"
@@ -205,32 +236,45 @@
             android:layout_column="0"
             android:layout_margin="2dp"
             android:background="#212121"
+            android:onClick="btn0"
             android:text="0"
-            android:textColor="#607d8d"
-            android:textSize="22dp" />
+            android:textColor="#EEF3F3"
+            android:textSize="22sp" />
 
         <Button
             android:id="@+id/punto"
-            android:layout_width="95dp"
-            android:layout_height="51dp"
+            android:layout_row="4"
             android:layout_column="1"
+            android:layout_margin="2dp"
             android:background="#212121"
+            android:onClick="btnPunto"
             android:text="."
             android:textColor="#ff9800"
-            android:textSize="22dp" />
+            android:textSize="22sp" />
 
         <Button
             android:id="@+id/igual"
-            android:layout_width="182dp"
-            android:layout_height="51dp"
+            android:layout_row="4"
             android:layout_column="2"
-            android:layout_columnSpan="2"
             android:layout_margin="2dp"
             android:background="#212121"
+            android:onClick="btnigual"
             android:text="="
             android:textColor="#ff9800"
-            android:textSize="22dp" />
+            android:textSize="22sp" />
 
     </GridLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-13dp"
+        android:layout_marginEnd="164dp"
+        android:clickable="true"
+        app:backgroundTint="#5C043764"
+        app:srcCompat="@android:drawable/arrow_down_float" />
 
 </RelativeLayout>
