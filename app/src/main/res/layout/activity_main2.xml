@@ -12,7 +12,7 @@
         android:id="@+id/mensaje"
         android:layout_width="337dp"
         android:layout_height="43dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="16dp"
         android:gravity="center"
         android:text="Maria Paula Mossquera 1733431 - Sebastian tamayo 1725707"
         android:textColor="#ff9800"
@@ -21,16 +21,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.083" />
+        app:layout_constraintVertical_bias="0.08" />
 
     <TextView
         android:id="@+id/historial"
         android:layout_width="338dp"
         android:layout_height="210dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="132dp"
         android:gravity="bottom|center_horizontal"
-        android:text="TextView"
+        android:text="0"
         android:textColor="#ff9800"
         android:textColorHighlight="#FFC107"
         android:textSize="27sp"

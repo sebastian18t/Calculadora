@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     public TextView mostrar;
     public double dig1, dig2, result;
     int operador;
+    public String opFinal="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         mostrar= (TextView)findViewById(R.id.caja);
         btnHistorial= (Button) findViewById(R.id.btnhistorial);
+
         btnHistorial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,10 +34,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void  openActivity2() {
         Intent intent = new Intent( MainActivity.this, Main2Activity.class);
+        intent.putExtra("opFinal", opFinal); //ENVIO DE LA ULTIMA OPERACION AL ACTIVITY
         startActivity(intent);
 
     }
 
+    //PARA PODER ASIGNAR LOS NUMEROS
     public void btn1(View view){
         String aux= mostrar.getText().toString();
         aux= aux + "1";
@@ -99,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
         aux= aux + ".";
         mostrar.setText(aux);
     }
+
+    ///OPERACIONES
 
     public void btnsuma (View view){
         String aux= mostrar.getText().toString();
@@ -165,17 +171,20 @@ public class MainActivity extends AppCompatActivity {
 
                     result= dig1+dig2;
                     aux = String.valueOf(result);
+                    opFinal=String.valueOf(dig1)+" + "+ String.valueOf(dig2)+" = "+ String.valueOf(result);
                     mostrar.setText(aux);
                     break;
                 case 2:
 
                     result= dig1-dig2;
                     aux = String.valueOf(result);
+                    opFinal=String.valueOf(dig1)+" - "+ String.valueOf(dig2)+" = "+ String.valueOf(result);
                     mostrar.setText(aux);
                     break;
                 case 3:
                     result= dig1*dig2;
                     aux = String.valueOf(result);
+                    opFinal=String.valueOf(dig1)+" * "+ String.valueOf(dig2)+" = "+ String.valueOf(result);
                     mostrar.setText(aux);
                     break;
                 case 4:
@@ -183,6 +192,7 @@ public class MainActivity extends AppCompatActivity {
 
                         result= dig1/dig2;
                         aux = String.valueOf(result);
+                        opFinal=String.valueOf(dig1)+" / "+ String.valueOf(dig2)+" = "+ String.valueOf(result);
                         mostrar.setText(aux);
 
                     }else mostrar.setText("Indefinido");
@@ -191,12 +201,14 @@ public class MainActivity extends AppCompatActivity {
 
                     result=Math.pow(dig1, dig2) ;
                     aux = String.valueOf(result);
+                    opFinal=String.valueOf(dig1)+"^"+ String.valueOf(dig2)+" = "+ String.valueOf(result);
                     mostrar.setText(aux);
                     break;
                 case 6:
 
                     result= Math.sqrt(dig1);
                     aux = String.valueOf(result);
+                    opFinal="√("+String.valueOf(dig1)+") = "+ String.valueOf(result);
                     mostrar.setText(aux);
                     break;
                 default:
