@@ -5,18 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#212121"
+    android:fadingEdge="horizontal"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/caja"
-        android:layout_width="366dp"
-        android:layout_height="103dp"
+        android:layout_width="313dp"
+        android:layout_height="118dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="116dp"
-        android:layout_marginEnd="35dp"
+        android:layout_marginEnd="51dp"
+        android:gravity="bottom|right"
         android:text="0"
-        android:textAlignment="viewEnd"
         android:textColor="#ff9800"
         android:textColorHighlight="#FFC107"
         android:textSize="27sp"
@@ -263,18 +264,22 @@
             android:textColor="#ff9800"
             android:textSize="22sp" />
 
+
     </GridLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/btnhistorial"
+        android:layout_width="128dp"
+        android:layout_height="34dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="-13dp"
-        android:layout_marginEnd="164dp"
-        android:clickable="true"
-        app:backgroundTint="#5C043764"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="48dp"
+        android:background="#D0023035"
+        android:gravity="bottom|end"
+        android:text="historial"
+        android:textColor="#ff9800"
+        android:textSize="22sp" />
+
 
 </RelativeLayout>
