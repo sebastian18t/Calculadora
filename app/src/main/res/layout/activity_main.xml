@@ -40,7 +40,7 @@
             android:layout_column="0"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btnclean"
+            android:onClick="btnClean"
             android:text="C"
             android:textColor="#ff9800"
             android:textSize="22sp" />
@@ -51,7 +51,7 @@
             android:layout_column="1"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btnraiz"
+            android:onClick="btnRaiz"
             android:text="√"
             android:textColor="#ff9800"
             android:textSize="22sp" />
@@ -62,7 +62,7 @@
             android:layout_column="2"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btnpoten"
+            android:onClick="btnPoten"
             android:text="x^"
             android:textColor="#ff9800"
             android:textSize="22sp" />
@@ -73,7 +73,7 @@
             android:layout_column="3"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btnbrr"
+            android:onClick="btnBrr"
             android:text="Borrar"
             android:textAllCaps="false"
             android:textColor="#ff9800"
@@ -85,7 +85,7 @@
             android:layout_column="3"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btndivi"
+            android:onClick="btnDivi"
             android:text="/"
             android:textColor="#ff9800"
             android:textSize="22sp" />
@@ -96,7 +96,7 @@
             android:layout_column="3"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btnmulti"
+            android:onClick="btnMulti"
             android:text="*"
             android:textColor="#ff9800"
             android:textSize="22sp" />
@@ -107,7 +107,7 @@
             android:layout_column="3"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btnsuma"
+            android:onClick="btnSuma"
             android:text="+"
             android:textColor="#ff9800"
             android:textSize="22sp" />
@@ -118,7 +118,7 @@
             android:layout_column="3"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btnresta"
+            android:onClick="btnResta"
             android:text="-"
             android:textColor="#ff9800"
             android:textSize="22sp" />
@@ -130,7 +130,7 @@
             android:layout_column="0"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btn7"
+            android:onClick="numerador"
             android:text="7"
             android:textColor="#FFFFFF"
             android:textSize="22sp" />
@@ -141,7 +141,7 @@
             android:layout_column="1"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btn8"
+            android:onClick="numerador"
             android:text="8"
             android:textColor="#F7F5F5"
             android:textSize="22sp" />
@@ -152,7 +152,7 @@
             android:layout_column="2"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btn9"
+            android:onClick="numerador"
             android:text="9"
             android:textColor="#FDFDFD"
             android:textSize="22sp" />
@@ -164,7 +164,7 @@
             android:layout_column="0"
             android:layout_margin="3dp"
             android:background="#212121"
-            android:onClick="btn4"
+            android:onClick="numerador"
             android:text="4"
             android:textColor="#F6F9FA"
             android:textSize="22sp" />
@@ -175,7 +175,7 @@
             android:layout_column="1"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btn5"
+            android:onClick="numerador"
             android:text="5"
             android:textAllCaps="false"
             android:textColor="#FDFDFD"
@@ -187,7 +187,7 @@
             android:layout_column="2"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btn6"
+            android:onClick="numerador"
             android:text="6"
             android:textColor="#F7F9FA"
             android:textSize="22sp"
@@ -201,7 +201,7 @@
             android:layout_column="0"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btn1"
+            android:onClick="numerador"
             android:text="1"
             android:textColor="#EDF2F3"
             android:textSize="22sp" />
@@ -212,7 +212,7 @@
             android:layout_column="1"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btn2"
+            android:onClick="numerador"
             android:text="2"
             android:textAllCaps="false"
             android:textColor="#E8EDF0"
@@ -224,7 +224,7 @@
             android:layout_column="2"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btn3"
+            android:onClick="numerador"
             android:text="3"
             android:textColor="#ECF0F1"
             android:textSize="22sp"
@@ -237,7 +237,7 @@
             android:layout_column="0"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btn0"
+            android:onClick="numerador"
             android:text="0"
             android:textColor="#EEF3F3"
             android:textSize="22sp" />
@@ -248,7 +248,7 @@
             android:layout_column="1"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btnPunto"
+            android:onClick="numerador"
             android:text="."
             android:textColor="#ff9800"
             android:textSize="22sp" />
@@ -259,11 +259,10 @@
             android:layout_column="2"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btnigual"
+            android:onClick="btnIgual"
             android:text="="
             android:textColor="#ff9800"
             android:textSize="22sp" />
-
 
     </GridLayout>
 

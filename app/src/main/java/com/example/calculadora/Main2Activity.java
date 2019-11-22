@@ -15,7 +15,7 @@ public class Main2Activity extends AppCompatActivity {
 
         pantHistorial= (TextView)findViewById(R.id.historial);
         String datos= getIntent().getStringExtra("opFinal");
-        pantHistorial.setText("Ultima Operacion:"+datos);
+        pantHistorial.setText("Ultima Operacion:"+datos); //TOMA LOS DATOS QUE LE ENVIA EL OTRO ACTIVITY Y LOS MUESTRA
 
     }
 }
