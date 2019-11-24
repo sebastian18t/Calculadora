@@ -14,27 +14,30 @@
         android:layout_height="43dp"
         android:layout_marginStart="16dp"
         android:gravity="center"
-        android:text="Maria Paula Mossquera 1733431 - Sebastian tamayo 1725707"
+        android:text="Maria Paula Mosquera 1733431 - Sebastian Tamayo 1725707"
         android:textColor="#ff9800"
         android:textColorHighlight="#FFC107"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintVertical_bias="0.024" />
 
     <TextView
         android:id="@+id/historial"
         android:layout_width="338dp"
-        android:layout_height="210dp"
-        android:layout_marginTop="132dp"
-        android:gravity="bottom|center_horizontal"
+        android:layout_height="106dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="76dp"
+        android:gravity="fill|center_vertical"
         android:text="0"
-        android:textColor="#ff9800"
+        android:textColor="#FFFFFF"
         android:textColorHighlight="#FFC107"
         android:textSize="27sp"
-        app:layout_constraintStart_toStartOf="@+id/mensaje"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

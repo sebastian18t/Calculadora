@@ -18,21 +18,21 @@
         android:layout_marginEnd="51dp"
         android:gravity="bottom|right"
         android:text="0"
-        android:textColor="#ff9800"
+        android:textColor="#FFFFFF"
         android:textColorHighlight="#FFC107"
         android:textSize="27sp"
         app:drawableTint="#FFC107" />
 
     <GridLayout
         android:layout_width="wrap_content"
-        android:layout_height="305dp"
+        android:layout_height="330dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="-5dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginStart="-7dp"
+        android:layout_marginBottom="5dp"
         android:background="#000B3053"
         android:columnCount="4"
-        android:rowCount="5">
+        android:rowCount="6">
 
         <Button
             android:id="@+id/clean"
@@ -51,7 +51,7 @@
             android:layout_column="1"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btnRaiz"
+            android:onClick="operacion"
             android:text="√"
             android:textColor="#ff9800"
             android:textSize="22sp" />
@@ -62,7 +62,7 @@
             android:layout_column="2"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btnPoten"
+            android:onClick="operacion"
             android:text="x^"
             android:textColor="#ff9800"
             android:textSize="22sp" />
@@ -85,7 +85,7 @@
             android:layout_column="3"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btnDivi"
+            android:onClick="operacion"
             android:text="/"
             android:textColor="#ff9800"
             android:textSize="22sp" />
@@ -96,7 +96,7 @@
             android:layout_column="3"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btnMulti"
+            android:onClick="operacion"
             android:text="*"
             android:textColor="#ff9800"
             android:textSize="22sp" />
@@ -107,7 +107,7 @@
             android:layout_column="3"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btnSuma"
+            android:onClick="operacion"
             android:text="+"
             android:textColor="#ff9800"
             android:textSize="22sp" />
@@ -118,7 +118,7 @@
             android:layout_column="3"
             android:layout_margin="2dp"
             android:background="#212121"
-            android:onClick="btnResta"
+            android:onClick="operacion"
             android:text="-"
             android:textColor="#ff9800"
             android:textSize="22sp" />
@@ -264,6 +264,30 @@
             android:textColor="#ff9800"
             android:textSize="22sp" />
 
+        <Button
+            android:id="@+id/btnMc"
+            android:layout_width="182dp"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:layout_margin="2dp"
+            android:background="#212121"
+            android:text="MC"
+            android:textColor="#ff9800"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btnMs"
+            android:layout_width="180dp"
+            android:layout_row="5"
+            android:layout_column="2"
+            android:layout_columnSpan="2"
+            android:layout_margin="2dp"
+            android:background="#212121"
+            android:text="MS"
+            android:textColor="#ff9800"
+            android:textSize="22sp" />
+
     </GridLayout>
 
     <Button
@@ -272,9 +296,9 @@
         android:layout_height="34dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="48dp"
-        android:background="#D0023035"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="46dp"
+        android:background="#212121"
         android:gravity="bottom|end"
         android:text="historial"
         android:textColor="#ff9800"

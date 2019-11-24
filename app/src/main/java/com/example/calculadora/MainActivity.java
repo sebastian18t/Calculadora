@@ -9,20 +9,23 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-    private Button btnHistorial;
-    public TextView mostrar;
-    public String dig1="", dig2="", aux="",opFinal="", display="";
-    public Double result;
-    int operador=0;
+import java.text.DecimalFormat;
 
+public class MainActivity extends AppCompatActivity {
+
+    private Button btnHistorial;
+    public TextView pantalla;
+    public String dig1="", dig2="",opFinal="", mostrar="", aux="";
+    public Double result;
+    public DecimalFormat format = new DecimalFormat("#.###");
+    int operador=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mostrar= (TextView)findViewById(R.id.caja);
+       pantalla= (TextView)findViewById(R.id.caja);
         btnHistorial= (Button) findViewById(R.id.btnhistorial);
 
         btnHistorial.setOnClickListener(new View.OnClickListener() { //ESCUCHA DEL BOTON HISTORIAL
@@ -44,67 +47,59 @@ public class MainActivity extends AppCompatActivity {
     //TOMAR EL VALOR DE LOS BOTONES Y CONCATENARLO EN UNA VARIABLE
     public void numerador(View v){
         Button b = (Button) v;
-        String valor = b.getText().toString();
+        String valor = b.getText().toString() ;
 
         if(operador !=  0){
             dig2=dig2+valor;
-            display=display+valor; //DISPLAY MUESTRA EN PANTALLA LA OPERACION QUE SE ESTA HACIENDO
-            mostrar.setText(display);
+           mostrar=mostrar+valor; //DISPLAY MUESTRA EN PANTALLA LA OPERACION QUE SE ESTA HACIENDO
+           pantalla.setText(mostrar);
         }else{
 
             dig1=dig1+valor;
-            mostrar.setText(dig1);
+           pantalla.setText(dig1);
         }
 
     }
 
     ///OPERADORES
-    public void btnSuma (View view){
-        if (!dig1.equals("")){
-            operador=1;
-            display=dig1+" + ";
-            mostrar.setText(display);
-        }
+    public void operacion (View view){
+        Button b = (Button) view;
+        String valor = b.getText().toString() ;
 
-    }
-    public void btnResta (View view){
         if (!dig1.equals("")){
-            operador=2;
-            display=dig1+" - ";
-            mostrar.setText(display);
-        }
 
-    }
-    public void btnMulti (View view){
-        if (!dig1.equals("")){
-            operador=3;
-            display=dig1+" * ";
-            mostrar.setText(display);
+            switch (valor){
+                case "+":
+                    operador=1;
+                   mostrar=dig1+" + ";
+                   pantalla.setText(mostrar);
+                    break;
+                case "-":
+                    operador=2;
+                   mostrar=dig1+" - ";
+                    pantalla.setText(mostrar);
+                    break;
+                case "*":
+                    operador=3;
+                   mostrar=dig1+" * ";
+                    pantalla.setText(mostrar);
+                    break;
+                case "/":
+                    operador=4;
+                   mostrar=dig1+" / ";
+                    pantalla.setText(mostrar);
+                    break;
+                case "x^":
+                    operador=5;
+                   mostrar=dig1+" ^ ";
+                    pantalla.setText(mostrar);
+                    break;
+                case "√":
+                    operador=6;
+                   pantalla.setText("√("+dig1+")");
+                    break;
+            }
         }
-
-    }
-    public void btnDivi (View view){
-        if (!dig1.equals("")){
-            operador=4;
-            display=dig1+" / ";
-            mostrar.setText(display);
-        }
-
-    }
-    public void btnPoten (View view){
-        if (!dig1.equals("")){
-            operador=5;
-            display=dig1+" ^ ";
-            mostrar.setText(display);
-        }
-
-    }
-    public void btnRaiz (View view){
-        if (!dig1.equals("")){
-            operador=6;
-            mostrar.setText("√("+dig1+")");
-        }
-
     }
 
     public void btnClean (View view){ //Limpia todos los valores de la calculadora
@@ -112,63 +107,63 @@ public class MainActivity extends AppCompatActivity {
         dig2="";
         result=0.0;
         operador=0;
-        mostrar.setText("");
+       pantalla.setText("");
     }
 
     public void btnBrr (View view){ //BORRA UNO A UNO LOS NUMEROS QUE SE HAYAN INSERTADO
 
             if (!dig2.equals("") && dig2 != null){
-                dig2= dig2.substring(0,dig2.length()-1);
+                dig2= dig2.substring(0,dig2.length()-1); //ELIMINA EL ULTIMO ELEMENTO DEL ARREGLO.
 
                 if (dig2.equals("")){
                     switch (operador){
                         case 1:
-                            display=dig1+" + ";
-                            mostrar.setText(display);
+                           mostrar=dig1+" + ";
+                            pantalla.setText(mostrar);
                             break;
                         case 2:
-                            display=dig1+" - ";
-                            mostrar.setText(display);
+                           mostrar=dig1+" - ";
+                            pantalla.setText(mostrar);
                             break;
                         case 3:
-                            display=dig1+" * ";
-                            mostrar.setText(display);
+                           mostrar=dig1+" * ";
+                            pantalla.setText(mostrar);
                             break;
                         case 4:
-                            display=dig1+" / ";
-                            mostrar.setText(display);
+                           mostrar=dig1+" / ";
+                            pantalla.setText(mostrar);
                             break;
                         case 5:
-                            display=dig1+" ^ ";
-                            mostrar.setText(display);
+                           mostrar=dig1+" ^ ";
+                            pantalla.setText(mostrar);
                             break;
                         case 6:
-                            display = "√("+dig1+")";
-                            mostrar.setText(display);
+                           mostrar = "√("+dig1+")";
+                            pantalla.setText(mostrar);
                             break;
                     }
 
                 }else{
                     switch (operador){
                         case 1:
-                            display=dig1+" + "+dig2;
-                            mostrar.setText(display);
+                           mostrar=dig1+" + "+dig2;
+                            pantalla.setText(mostrar);
                             break;
                         case 2:
-                            display=dig1+" - "+dig2;
-                            mostrar.setText(display);
+                           mostrar=dig1+" - "+dig2;
+                            pantalla.setText(mostrar);
                             break;
                         case 3:
-                            display=dig1+" * "+dig2;
-                            mostrar.setText(display);
+                           mostrar=dig1+" * "+dig2;
+                            pantalla.setText(mostrar);
                             break;
                         case 4:
-                            display=dig1+" / "+dig2;
-                            mostrar.setText(display);
+                           mostrar=dig1+" / "+dig2;
+                            pantalla.setText(mostrar);
                             break;
                         case 5:
-                            display=dig1+" ^ "+dig2;
-                            mostrar.setText(display);
+                           mostrar=dig1+" ^ "+dig2;
+                            pantalla.setText(mostrar);
                             break;
                     }
                 }
@@ -176,11 +171,11 @@ public class MainActivity extends AppCompatActivity {
             }else if(operador != 0){
 
                 operador=0;
-                mostrar.setText(dig1);
+               pantalla.setText(dig1);
             }else if (!dig1.equals("")&& dig2 != null){
 
                 dig1= dig1.substring(0,dig1.length()-1);
-                mostrar.setText(dig1);
+               pantalla.setText(dig1);
             }
     }
 
@@ -189,65 +184,65 @@ public class MainActivity extends AppCompatActivity {
         if(dig1 != "" &&  operador != 0 && dig2 != ""){
 
             switch (operador){
-                case 1:
+                case 1: //SUMA
 
-                    result= Double.parseDouble(dig1)+ Double.parseDouble(dig2);
-                    aux = String.valueOf(result);
-                    opFinal=dig1+" + "+ dig2+" = "+ String.valueOf(result);
-                    mostrar.setText(opFinal);
-                    dig1=String.valueOf(result);
+                    result=Double.parseDouble(dig1)+ Double.parseDouble(dig2);
+                    aux =format.format(result);  //CONTIENE EL VALOR RESULTANTE DE LA OPERACION
+                    opFinal=dig1+" + "+ dig2+" = "+ aux;  //CONTIENE LA ECUACION FINAL MAS SU RESULTADO, ESTO ES PARA ENVIAR AL HISTORIAL
+                    pantalla.setText(opFinal);
+                    dig1=aux; //SE AÑADE EL VALOR DEL RESULTADO AL DIG1 PARA PODER CONTINUAR REALIZANDO OPERACIONES
                     dig2="";
                     break;
-                case 2:
+                case 2://RESTA
 
                     result= Double.parseDouble(dig1) - Double.parseDouble(dig2);
-                    aux = String.valueOf(result);
-                    opFinal=dig1+" - "+ dig2+" = "+ String.valueOf(result);
-                    mostrar.setText(opFinal);
-                    dig1=String.valueOf(result);
+                    aux =format.format(result);
+                    opFinal=dig1+" - "+ dig2+" = "+ aux;
+                    pantalla.setText(opFinal);
+                    dig1=aux;
                     dig2="";
                     break;
-                case 3:
+                case 3: //MULTIPLICACION
 
                     result= Double.parseDouble(dig1) * Double.parseDouble(dig2);
-                    aux = String.valueOf(result);
-                    opFinal=dig1+" * "+ dig2+" = "+ String.valueOf(result);
-                    mostrar.setText(opFinal);
-                    dig1=String.valueOf(result);
+                    aux =format.format(result);
+                    opFinal=dig1+" * "+ dig2+" = "+ aux;
+                    pantalla.setText(opFinal);
+                    dig1=aux;
                     dig2="";
                     break;
-                case 4:
+                case 4: //DIVISION
 
                     if (!dig2.equals("0")){
 
                         result= Double.parseDouble(dig1) / Double.parseDouble(dig2);
-                        aux = String.valueOf(result);
-                        opFinal=dig1+" / "+ dig2+" = "+ String.valueOf(result);
-                        mostrar.setText(opFinal);
-                        dig1=String.valueOf(result);
+                        aux =format.format(result);
+                        opFinal=dig1+" / "+ dig2+" = "+ aux;
+                        pantalla.setText(opFinal);
+                        dig1=aux;
                         dig2="";
 
-                    }else{ mostrar.setText("Infinito");}
+                    }else{pantalla.setText("Infinito");}
                     break;
-                case 5:
+                case 5: //POTENCIA
 
                     result= Math.pow(Double.parseDouble(dig1), Double.parseDouble(dig2)) ;
-                    aux = String.valueOf(result);
-                    opFinal=dig1+" ^ "+ dig2+" = "+ String.valueOf(result);
-                    mostrar.setText(opFinal);
-                    dig1=String.valueOf(result);
+                    aux =format.format(result);
+                    opFinal=dig1+" ^ "+ dig2+" = "+ aux;
+                    pantalla.setText(opFinal);
+                    dig1=aux;
                     dig2="";
                     break;
                 default:
-                    mostrar.setText("ERROR");
+                   pantalla.setText("ERROR");
             }
-        }else if (!dig1.equals("") &&  operador == 6){
+        }else if (!dig1.equals("") &&  operador == 6){ //ESTE ES PARA EL CASO DE LA RAIZ CUADRADA DONDE SOLO SE UTILIZA UN VALOR
 
                 result= Math.sqrt(Double.parseDouble(dig1));
-                aux = String.valueOf(result);
-                opFinal="√("+dig1+") = "+ String.valueOf(result);
-                mostrar.setText(opFinal);
-                dig1=String.valueOf(result);
+                aux =format.format(result);
+                opFinal="√("+dig1+") = "+ aux;
+                pantalla.setText(opFinal);
+                dig1=aux;
                 dig2="";
         }
     }
