@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnHistorial;
     public TextView pantalla;
-    public String dig1="", dig2="",opFinal="", mostrar="", aux="";
+    public String dig1="", dig2="",opFinal="", mostrar="", aux="", temporal="";
     public Double result;
     public DecimalFormat format = new DecimalFormat("#.###");
     int operador=0;
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         dig2="";
         result=0.0;
         operador=0;
-       pantalla.setText("");
+        pantalla.setText("");
     }
 
     public void btnBrr (View view){ //BORRA UNO A UNO LOS NUMEROS QUE SE HAYAN INSERTADO
@@ -192,6 +192,7 @@ public class MainActivity extends AppCompatActivity {
                     pantalla.setText(opFinal);
                     dig1=aux; //SE AÑADE EL VALOR DEL RESULTADO AL DIG1 PARA PODER CONTINUAR REALIZANDO OPERACIONES
                     dig2="";
+                    operador=0;
                     break;
                 case 2://RESTA
 
@@ -201,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
                     pantalla.setText(opFinal);
                     dig1=aux;
                     dig2="";
+                    operador=0;
                     break;
                 case 3: //MULTIPLICACION
 
@@ -210,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
                     pantalla.setText(opFinal);
                     dig1=aux;
                     dig2="";
+                    operador=0;
                     break;
                 case 4: //DIVISION
 
@@ -221,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
                         pantalla.setText(opFinal);
                         dig1=aux;
                         dig2="";
+                        operador=0;
 
                     }else{pantalla.setText("Infinito");}
                     break;
@@ -232,6 +236,7 @@ public class MainActivity extends AppCompatActivity {
                     pantalla.setText(opFinal);
                     dig1=aux;
                     dig2="";
+                    operador=0;
                     break;
                 default:
                    pantalla.setText("ERROR");
@@ -244,6 +249,28 @@ public class MainActivity extends AppCompatActivity {
                 pantalla.setText(opFinal);
                 dig1=aux;
                 dig2="";
+                operador=0;
+        }
+    }
+
+    public void btnMc(View view){
+        if(!aux.equals("")){
+            temporal=aux;
+        }
+    }
+
+    public void btnMs(View view){
+        if (!temporal.equals("")){
+
+            if(!dig1.equals("") && operador!= 0 && dig2.equals("")){
+                dig2=temporal;
+                mostrar=mostrar+dig2; //DISPLAY MUESTRA EN PANTALLA LA OPERACION QUE SE ESTA HACIENDO
+                pantalla.setText(mostrar);
+            }else{
+                dig1=temporal;
+                mostrar=dig1; //DISPLAY MUESTRA EN PANTALLA LA OPERACION QUE SE ESTA HACIENDO
+                pantalla.setText(mostrar);
+            }
         }
     }
 
